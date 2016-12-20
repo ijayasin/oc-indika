@@ -8,6 +8,16 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+
+# Mapbox
+gem 'mapbox-rails'
+
+# Ruby wrapper around YAML files.
+gem 'settingslogic'
+
+# Soft-delete records
+gem "paranoia"
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -17,6 +27,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'administrate'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
