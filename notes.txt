@@ -27,3 +27,51 @@ Some setup you must do manually if you haven't yet:
 ----------------------------------------------------------------------------------------------
 
 
+Mapbox files
+/Users/indika/.rvm/gems/ruby-2.3.3@rails5/gems/mapbox-rails-1.6.1.1/lib/mapbox-rails/remote_resource_loader.rb
+
+
+curl "http://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.uncompressed.js"      -o "javascripts/mapbox.js"
+curl "http://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css"                  -o "stylesheets/mapbox.css"
+curl "http://api.tiles.mapbox.com/mapbox.js/v1.6.1/images/layers.png"           -o "images/layers.png"
+curl "http://api.tiles.mapbox.com/mapbox.js/v1.6.1/images/marker-icon.png"      -o "images/marker-icon.png"
+curl "http://api.tiles.mapbox.com/mapbox.js/v1.6.1/images/marker-shadow.png"    -o "images/marker-shadow.png"
+curl "http://api.tiles.mapbox.com/mapbox.js/v1.6.1/images/icons-000000.png"     -o "images/icons-000000.png"
+curl "http://api.tiles.mapbox.com/mapbox.js/v1.6.1/images/icons-ffffff.png"     -o "images/icons-ffffff.png"
+curl "http://api.tiles.mapbox.com/mapbox.js/v1.6.1/images/icons-000000@2x.png"  -o "images/icons-000000@2x.png"
+curl "http://api.tiles.mapbox.com/mapbox.js/v1.6.1/images/icons-ffffff@2x.png"  -o "images/icons-ffffff@2x.png"
+
+
+----------------------------------------------------------------------------------------------
+
+LAT1 = SW
+LAT2 = NE
+
+https://www.mapbox.com/help/mapbox-gl-js-fundamentals/
+https://www.mapbox.com/mapbox-gl-js/examples/
+https://www.mapbox.com/mapbox-gl-js/api/#Events
+
+Image API
+https://www.mapbox.com/api-documentation/#static-classic
+
+# a 400x200 static map
+https://api.mapbox.com/v4/mapbox.dark/-76.9,38.9,5/400x200.png?access_token=your-access-token
+
+
+
+https://www.mapbox.com/mapbox-gl-js/example/fitbounds/
+
+
+document.getElementById('fit').addEventListener('click', function() {
+    map.fitBounds([[
+        32.958984,
+        -5.353521
+    ], [
+        43.50585,
+        5.615985
+    ]]);
+});
+
+
+
+
