@@ -4,7 +4,17 @@
 
 <h2 class="mt-2"><%= @map.name %></h2>
 
-<dl class="row map-details my-2 float-right">
+
+<div class="card">
+  <div class="card-header">
+    Map Details
+    <div class="float-sm-right">
+      <%= link_to 'Edit', edit_map_path(@map), class: 'btn btn-primary mr-1' %>
+      <%= link_to 'Destroy Map', @map, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger mr-1' %>
+    </div>
+  </div>
+
+<dl class="row card-block map-details my-2 float-right">
   <dt class="col-sm-2">Map ID</dt>
   <dd class="col-sm-10"><%= @map.id %></dd>
   <dt class="col-sm-2">Created At</dt>
@@ -12,15 +22,50 @@
   <dt class="col-sm-2">Updated At</dt>
   <dd class="col-sm-10"><%= @map.updated_at %></dd>
   <dt class="col-sm-2">SW Corner</dt>
-  <dd class="col-sm-3"><%= @map.lng1 %></dd>
-  <dd class="col-sm-3"><%= @map.lat1 %></dd>
+  <dd class="col-sm-3">span.Lng: <%= @map.lng1 %></dd>
+  <dd class="col-sm-3">Lat: <%= @map.lat1 %></dd>
   <dt class="col-sm-2">NE Corner</dt>
-  <dd class="col-sm-3"><%= @map.lng2 %></dd>
-  <dd class="col-sm-3"><%= @map.lat2 %></dd>
+  <dd class="col-sm-3">Lng: <%= @map.lng2 %></dd>
+  <dd class="col-sm-3">Lat: <%= @map.lat2 %></dd>
 </dl>
 
+</div>
+
+
+
+<div class="card mb-3">
+  <div class="card-header">
+    Map Markers
+  </div>
+
+<table class="card-block table">
+  <thead>
+  <tr>
+    <th class="text-right">Marker ID</th>
+    <th class="text-right">Name</th>
+    <th class="text-right">Residents</th>
+    <th class="text-right">Longitude</th>
+    <th class="text-right">Latitude</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @map.markers.each do |marker| %>
+      <tr>
+        <td class="text-right"><%= marker.id        %></td>
+        <td class="text-right"><%= link_to marker.name, 'javascript:void(0)', class: 'marker_link' %></td>
+        <td class="text-right"><%= marker.residents %></td>
+        <td class="text-right"><%= marker.lng       %></td>
+        <td class="text-right"><%= marker.lat       %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+</div>
+
+
+
 <div class="row my-2">
-  <%= link_to 'Destroy Map', @map, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger mr-1' %>
-  <%= link_to 'Edit', edit_map_path(@map), class: 'btn btn-primary mr-1' %>
-  <%= link_to 'Back', maps_path, class: 'btn btn-secondary' %>
+  <%= link_to 'My Maps', maps_path, class: 'btn btn-secondary' %>
 </div>

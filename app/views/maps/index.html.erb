@@ -21,10 +21,10 @@
         <td class="mapcell"><%= link_to(map){ image_tag map_image_url(map), alt: '', class: 'mapimage'} %></td>
         <td><%= link_to map.id,   map_path(map) %></td>
         <td><%= link_to map.name || '', map_path(map) %></td>
-        <td class="text-right"><%= map.lng1 %></td>
-        <td class="text-right"><%= map.lat1 %></td>
-        <td class="text-right"><%= map.lng2 %></td>
-        <td class="text-right"><%= map.lat2 %></td>
+        <td class="text-right text-truncate"><%= map.lng1 %></td>
+        <td class="text-right text-truncate"><%= map.lat1 %></td>
+        <td class="text-right text-truncate"><%= map.lng2 %></td>
+        <td class="text-right text-truncate"><%= map.lat2 %></td>
         <td><%= link_to 'Edit', edit_map_path(map) %></td>
         <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

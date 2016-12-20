@@ -15,7 +15,7 @@ class MapsController < ApplicationController
 
   # GET /maps/new
   def new
-    @map = Map.new
+    @map = current_user.maps.new
   end
 
   # GET /maps/1/edit
@@ -29,7 +29,7 @@ class MapsController < ApplicationController
 
     respond_to do |format|
       if @map.save
-        format.html { redirect_to @map, notice: 'Map was successfully created.' }
+        format.html { redirect_to edit_map_path(@map), notice: 'Map was successfully created.' }
         format.json { render :show, status: :created, location: @map }
       else
         format.html { render :new }

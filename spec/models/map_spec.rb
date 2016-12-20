@@ -1,14 +1,15 @@
 require 'rails_helper'
 
 describe Map, type: :model do
+
   describe '#bounds' do
+    let(:map){ Map.new(name: 'Map1', lng1: 111.111, lat1: 11.11, lng2: 222.222, lat2: 22.22) }
+
     it 'returns an array of long-lat arrays' do
-      map = Map.new(lng1: 111.111, lat1: 11.11, lng2: 222.222, lat2: 22.22)
       expect(map.bounds).to eq [[111.111, 11.11], [222.222, 22.22]]
     end
 
     it 'can be rendered as JSON using to_json' do
-      map = Map.new(lng1: 111.111, lat1: 11.11, lng2: 222.222, lat2: 22.22)
       expect(map.bounds.to_json).to eq "[[111.111,11.11],[222.222,22.22]]"
     end
   end

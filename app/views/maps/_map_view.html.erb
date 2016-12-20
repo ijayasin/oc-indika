@@ -1,39 +1,30 @@
-<div id='map'></div>
 
-<% if editable %>
-  <p class="my-1 text-muted">Move the map to set the new map's bounding box. Also, use shift+Mouse move to define a bounding box.</p>
-<% end %>
+<div class="row">
+  <div id='map' class="col-sm-12 col-lg-7 px-0"></div>
 
-<script>
-  function populateLatLong(){
-      var bounds = map.getBounds();
-      console.dir(bounds);
-
-      // Lat1 = SW
-      $('#map_lat1').val(bounds._sw.lat);
-      $('#map_lng1').val(bounds._sw.lng);
-
-      // Lat1 = NE
-      $('#map_lat2').val(bounds._ne.lat);
-      $('#map_lng2').val(bounds._ne.lng);
-
-      $('#map_zoom').val(map.getZoom());
-  }
-
-  mapboxgl.accessToken = '<%= Settings.mapbox.access_token %>';
-  window.map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v9',
-      trackResize: true
-  });
-
-  <% unless map.new_record? %>
-    map.fitBounds(<%= map.bounds.to_json %>);
+  <% if editable %>
+  <ul class="list-unstyled col-sm-12 col-lg-5">
+    <li>
+      Specify the Long-Lat bounding box by clicking and holding <key>Shift</key> while dragging the mouse pointer.
+    </li>
+    <li>
+      The Long-Lat input fields will be updated when you release the mouse button.
+    </li>
+  </ul>
   <% end %>
 
-  map.addControl(new mapboxgl.NavigationControl(), 'top-left');
-  map.addControl(new mapboxgl.GeolocateControl(),  'top-right');
+</div>
 
-  map.on('move', populateLatLong);  // move, movestart, moveend
-  map.on('zoom', populateLatLong);  // zoom, zoomstart, zoomend
+<script>
+  var accessToken = '<%= Settings.mapbox.access_token %>';
+  var mapBounds   = <%= map.bounds.to_json %>;
+  var geojson     = <%= geojson_feature_collection(map.id, map.markers).to_json.html_safe %>;
+  var options     = {
+      editable: <%= editable.to_json.html_safe %>,
+      newMap:   <%= map.new_record?.to_json.html_safe %>
+  };
+
+  window.mapHandler = new window.MapHander('map', accessToken, mapBounds , geojson, options);
 </script>
+
+<%= render :partial => "map_modal" %>
