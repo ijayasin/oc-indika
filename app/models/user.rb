@@ -3,6 +3,7 @@ class User < ApplicationRecord
   after_initialize :set_default_role, :if => :new_record?
 
   has_many :maps
+  has_many :markers
 
   def set_default_role
     self.role ||= :user

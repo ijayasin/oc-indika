@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161220012143) do
+ActiveRecord::Schema.define(version: 20161220020034) do
 
   create_table "maps", force: :cascade do |t|
     t.integer  "user_id"
@@ -25,6 +25,23 @@ ActiveRecord::Schema.define(version: 20161220012143) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["user_id"], name: "index_maps_on_user_id"
+  end
+
+  create_table "markers", force: :cascade do |t|
+    t.integer  "user_id",                         null: false
+    t.integer  "map_id",                          null: false
+    t.float    "lng",                             null: false
+    t.float    "lat",                             null: false
+    t.string   "icon",         default: "marker"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "residents"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.datetime "destroyed_at"
+    t.index ["map_id"], name: "index_markers_on_map_id"
+    t.index ["user_id", "map_id"], name: "index_markers_on_user_id_and_map_id"
+    t.index ["user_id"], name: "index_markers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

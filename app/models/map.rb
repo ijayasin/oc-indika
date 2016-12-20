@@ -3,6 +3,9 @@ class Map < ApplicationRecord
 
   acts_as_paranoid column: :destroyed_at
 
+  belongs_to  :user
+  has_many    :markers
+
   # https://www.mapbox.com/mapbox-gl-js/api/#LngLatBoundsLike
   def bounds
     [[lng1, lat1], [lng2, lat2]]
