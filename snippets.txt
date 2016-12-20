@@ -44,12 +44,23 @@ curl "http://api.tiles.mapbox.com/mapbox.js/v1.6.1/images/icons-ffffff@2x.png"  
 
 ----------------------------------------------------------------------------------------------
 
+USEFUL LINKS:
+Hover on popup:          https://www.mapbox.com/mapbox-gl-js/example/popup-on-hover/
+Create map using bounds: https://www.mapbox.com/mapbox-gl-js/example/fitbounds/
+Onclick example:         https://www.mapbox.com/mapbox-gl-js/example/polygon-popup-on-click/
+Custom Markers:          https://www.mapbox.com/mapbox-gl-js/example/custom-marker-icons/
+Popup                    https://www.mapbox.com/mapbox-gl-js/example/set-popup/
+Dragable Point           https://www.mapbox.com/mapbox-gl-js/example/drag-a-point/
+Center Map on Clicked Symbol https://www.mapbox.com/mapbox-gl-js/example/center-on-symbol/
+
+
 LAT1 = SW
 LAT2 = NE
 
 https://www.mapbox.com/help/mapbox-gl-js-fundamentals/
 https://www.mapbox.com/mapbox-gl-js/examples/
 https://www.mapbox.com/mapbox-gl-js/api/#Events
+https://www.mapbox.com/mapbox-gl-js/api/#MapBoxZoomEvent
 
 Image API
 https://www.mapbox.com/api-documentation/#static-classic
@@ -73,5 +84,34 @@ document.getElementById('fit').addEventListener('click', function() {
 });
 
 
+
+
+// POPUP
+// https://www.mapbox.com/mapbox-gl-js/example/popup/
+var popup = new mapboxgl.Popup({closeOnClick: false})
+    .setLngLat([-96, 37.8])
+    .setHTML('<h1>Hello World!</h1>')
+    .addTo(map);
+
+
+// Popup on Click
+// https://www.mapbox.com/mapbox-gl-js/example/popup-on-click/
+//
+// When a click event occurs near a place, open a popup at the location of
+// the feature, with description HTML from its properties.
+map.on('click', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['places'] });
+
+    if (!features.length) { return; }
+
+    var feature = features[0];
+
+    // Populate the popup and set its coordinates
+    // based on the feature found.
+    var popup = new mapboxgl.Popup()
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(feature.properties.description)
+        .addTo(map);
+});
 
 
