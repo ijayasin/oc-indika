@@ -9,9 +9,13 @@
       </li>
     </ul>
     <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-      <%= link_to "Maps", root_path, class: 'navbar-brand' %>
+      <%= link_to "My Maps", root_path, class: 'navbar-brand' %>
+      <%= link_to "New Map", new_map_path, class: 'navbar-brand' %>
       <ul class="nav navbar-nav">
         <%= render 'layouts/navigation_links' %>
+      </ul>
+
+      <ul class="nav navbar-nav float-sm-right">
         <%= render 'layouts/nav_links_for_auth' %>
       </ul>
     </div>
