@@ -1,0 +1,8 @@
+<h1>New Map</h1>
+
+<%= render 'map_view', map: @map, editable: @map.new_record? %>
+
+
+<%= render 'form', map: @map %>
+
+<%= link_to 'Back', maps_path, class: 'btn btn-secondary my-1' %>

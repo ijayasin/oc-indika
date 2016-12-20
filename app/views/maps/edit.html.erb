@@ -1,0 +1,10 @@
+<h1>Editing Map</h1>
+
+<%= render 'map_view', map: @map, editable: true %>
+
+<%= render 'form', map: @map %>
+
+<div class="my-1">
+  <%= link_to 'Show', @map,       class: 'btn btn-primary mr-1' %>
+  <%= link_to 'Back', maps_path,  class: 'btn btn-secondary' %>
+</div>

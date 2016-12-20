@@ -1,0 +1,44 @@
+<%= form_for(map) do |f| %>
+  <%= f.hidden_field :zoom %>
+
+  <% if map.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(map.errors.count, "error") %> prohibited this map from being saved:</h2>
+
+      <ul>
+      <% map.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="form-group">
+      <%= f.label :name%>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-inline my-1">
+      <div class="form-group mr-1">
+        <%= f.label :lat1 %>
+        <%= f.text_field :lat1, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :lng1 %>
+        <%= f.text_field :lng1, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-inline my-1">
+      <div class="form-group mr-1">
+        <%= f.label :lat2 %>
+        <%= f.text_field :lat2, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :lng2 %>
+        <%= f.text_field :lng2, class: 'form-control' %>
+      </div>
+    </div>
+
+    <%= f.submit class: 'btn btn-primary my-1' %>
+<% end %>

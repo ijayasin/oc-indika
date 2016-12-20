@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Maps</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>ID</th>
+      <th class="text-right">Lng1</th>
+      <th class="text-right">Lat1</th>
+      <th class="text-right">Lng2</th>
+      <th class="text-right">Lat2</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @maps.each do |map| %>
+      <tr>
+        <td class="mapcell"><%= link_to(map){ image_tag map_image_url(map), alt: '', class: 'mapimage'} %></td>
+        <td><%= link_to map.id,   map_path(map) %></td>
+        <td><%= link_to map.name || '', map_path(map) %></td>
+        <td class="text-right"><%= map.lng1 %></td>
+        <td class="text-right"><%= map.lat1 %></td>
+        <td class="text-right"><%= map.lng2 %></td>
+        <td class="text-right"><%= map.lat2 %></td>
+        <td><%= link_to 'Edit', edit_map_path(map) %></td>
+        <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Map', new_map_path, class: 'btn btn-primary my-2' %>
