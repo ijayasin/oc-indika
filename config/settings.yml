@@ -1,0 +1,13 @@
+# config/settings.yml
+defaults: &defaults
+  mapbox:
+    access_token: 'pk.PUT_MAPBOX_ACCESS_TOKEN_HERE'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
