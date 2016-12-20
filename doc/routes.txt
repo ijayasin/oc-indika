@@ -1,4 +1,12 @@
                   Prefix Verb   URI Pattern                     Controller#Action
+                    maps GET    /maps(.:format)                 maps#index
+                         POST   /maps(.:format)                 maps#create
+                 new_map GET    /maps/new(.:format)             maps#new
+                edit_map GET    /maps/:id/edit(.:format)        maps#edit
+                     map GET    /maps/:id(.:format)             maps#show
+                         PATCH  /maps/:id(.:format)             maps#update
+                         PUT    /maps/:id(.:format)             maps#update
+                         DELETE /maps/:id(.:format)             maps#destroy
              admin_users GET    /admin/users(.:format)          admin/users#index
                          POST   /admin/users(.:format)          admin/users#create
           new_admin_user GET    /admin/users/new(.:format)      admin/users#new
@@ -7,8 +15,8 @@
                          PATCH  /admin/users/:id(.:format)      admin/users#update
                          PUT    /admin/users/:id(.:format)      admin/users#update
                          DELETE /admin/users/:id(.:format)      admin/users#destroy
-              admin_root GET    /admin(.:format)                admin/home#index
-                    root GET    /                               visitors#index
+              admin_root GET    /admin(.:format)                admin/users#index
+                    root GET    /                               maps#index
         new_user_session GET    /users/sign_in(.:format)        devise/sessions#new
             user_session POST   /users/sign_in(.:format)        devise/sessions#create
     destroy_user_session DELETE /users/sign_out(.:format)       devise/sessions#destroy
