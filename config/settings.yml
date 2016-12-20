@@ -11,3 +11,5 @@ test:
 
 production:
   <<: *defaults
+  mapbox:
+    access_token: '<%= ENV['OC_MAPBOX_ACCESS_TOKEN'] || 'NOT_SET' %>'
