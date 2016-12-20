@@ -1,0 +1,107 @@
+Usage: rails generate GENERATOR [args] [options]
+
+General options:
+  -h, [--help]     # Print generator's options and usage
+  -p, [--pretend]  # Run but do not make any changes
+  -f, [--force]    # Overwrite files that already exist
+  -s, [--skip]     # Skip files that already exist
+  -q, [--quiet]    # Suppress status output
+
+Please choose a generator below.
+
+Rails:
+  assets
+  channel
+  controller
+  generator
+  helper
+  integration_test
+  jbuilder
+  job
+  mailer
+  migration
+  model
+  resource
+  responders_controller
+  scaffold
+  scaffold_controller
+  task
+
+ActiveRecord:
+  active_record:devise
+
+Administrate:
+  administrate:assets
+  administrate:assets:images
+  administrate:assets:javascripts
+  administrate:assets:stylesheets
+  administrate:dashboard
+  administrate:field
+  administrate:install
+  administrate:routes
+  administrate:view
+  administrate:views
+  administrate:views:edit
+  administrate:views:field
+  administrate:views:form
+  administrate:views:index
+  administrate:views:layout
+  administrate:views:new
+  administrate:views:show
+  administrate:views:sidebar
+
+Coffee:
+  coffee:assets
+
+Devise:
+  devise
+  devise:controllers
+  devise:install
+  devise:views
+
+FactoryGirl:
+  factory_girl:model
+
+Js:
+  js:assets
+
+Kaminari:
+  kaminari:config
+  kaminari:views
+
+Layout:
+  layout:devise
+  layout:install
+  layout:navigation
+
+Mongoid:
+  mongoid:devise
+
+Responders:
+  responders:install
+
+Rspec:
+  rspec:controller
+  rspec:feature
+  rspec:helper
+  rspec:install
+  rspec:integration
+  rspec:job
+  rspec:mailer
+  rspec:model
+  rspec:observer
+  rspec:request
+  rspec:scaffold
+  rspec:view
+
+TestUnit:
+  test_unit:controller
+  test_unit:generator
+  test_unit:helper
+  test_unit:integration
+  test_unit:job
+  test_unit:mailer
+  test_unit:model
+  test_unit:plugin
+  test_unit:scaffold
+

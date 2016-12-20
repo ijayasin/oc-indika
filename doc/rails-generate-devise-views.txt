@@ -1,0 +1,19 @@
+Usage:
+  rails generate devise:views [SCOPE] [options]
+
+Options:
+  -b, [--form-builder=NAME]        # Form builder to be used
+                                   # Default: form_for
+      [--markerb], [--no-markerb]  # Generate markerb instead of erb mail views
+                                   # Default: erb
+
+Devise::Generators::SharedViewsGenerator options:
+  -v, [--views=one two three]  # Select specific view directories to generate (confirmations, passwords, registrations, sessions, unlocks, mailer)
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Copies Devise views to your application.

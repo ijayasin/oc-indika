@@ -1,0 +1,25 @@
+Usage:
+  rails generate devise:controllers SCOPE [options]
+
+Options:
+  -c, [--controllers=one two three]  # Select specific controllers to generate (confirmations, passwords, registrations, sessions, unlocks, omniauth_callbacks)
+
+Runtime options:
+  -f, [--force]                    # Overwrite files that already exist
+  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
+  -q, [--quiet], [--no-quiet]      # Suppress status output
+  -s, [--skip], [--no-skip]        # Skip files that already exist
+
+Create inherited Devise controllers in your app/controllers folder.
+
+Use -c to specify which controller you want to overwrite.
+If you do no specify a controller, all controllers will be created.
+For example:
+
+  rails generate devise:controllers users -c=sessions
+
+This will create a controller class at app/controllers/users/sessions_controller.rb like this:
+
+  class Users::ConfirmationsController < Devise::ConfirmationsController
+    content...
+  end

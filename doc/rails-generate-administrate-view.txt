@@ -1,0 +1,2 @@
+Could not find generator 'administrate:view'. Maybe you meant 'administrate:view', 'administrate:views' or 'administrate:field'
+Run `rails generate --help` for more options.
