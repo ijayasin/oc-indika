@@ -10,7 +10,6 @@
       <th class="text-right">Lat1</th>
       <th class="text-right">Lng2</th>
       <th class="text-right">Lat2</th>
-      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -24,8 +23,6 @@
         <td class="text-right text-truncate"><%= map.lat1 %></td>
         <td class="text-right text-truncate"><%= map.lng2 %></td>
         <td class="text-right text-truncate"><%= map.lat2 %></td>
-        <td><%= link_to 'Edit', edit_map_path(map) %></td>
-        <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
