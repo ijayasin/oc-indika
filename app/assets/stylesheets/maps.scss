@@ -10,3 +10,9 @@ table tr td.mapcell {
 td.mapcell .mapimage {
   width: 125px;
 }
+
+// Limit the mapboxgl popup width. This to keep
+// wide content from spilling out of the mapbox.
+.mapboxgl-popup-content {
+  max-width: 350px;
+}
