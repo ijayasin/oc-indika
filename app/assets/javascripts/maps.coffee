@@ -4,7 +4,7 @@
 
 
 # Serves as a client-side controller which wraps the Mapbox view.
-class MapHander
+class MapHandler
   constructor: (mapDiv, accessToken, mapBounds, geojson, options={}) ->
     @editable = options.editable
     @newMap   = options.newMap
@@ -132,4 +132,6 @@ class MapHander
     $('#map_zoom').val(@map.getZoom());
 
 
-window.MapHander = MapHander
+window.MapHandler = MapHandler
+
+console.log("ASSINGED MapHandler!")

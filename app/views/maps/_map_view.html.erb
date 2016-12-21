@@ -25,7 +25,8 @@
         editable: <%= editable.to_json.html_safe %>,
         newMap:   <%= map.new_record?.to_json.html_safe %>
     };
-    window.mapHandler = new window.MapHander('map', accessToken, mapBounds , geojson, options);
+    window.mapHandler = new window.MapHandler('map', accessToken, mapBounds , geojson, options);
+    console.log("READ!!");
   });
 
 </script>
