@@ -19,10 +19,10 @@
         <td class="mapcell"><%= link_to(map){ image_tag map_image_url(map), alt: '', class: 'mapimage'} %></td>
         <td><%= link_to map.id,   map_path(map) %></td>
         <td><%= link_to map.name || '', map_path(map) %></td>
-        <td class="text-right text-truncate"><%= map.lng1 %></td>
-        <td class="text-right text-truncate"><%= map.lat1 %></td>
-        <td class="text-right text-truncate"><%= map.lng2 %></td>
-        <td class="text-right text-truncate"><%= map.lat2 %></td>
+        <td class="text-right text-truncate map_lng_lat"><%= map.lng1 %></td>
+        <td class="text-right text-truncate map_lng_lat"><%= map.lat1 %></td>
+        <td class="text-right text-truncate map_lng_lat"><%= map.lng2 %></td>
+        <td class="text-right text-truncate map_lng_lat"><%= map.lat2 %></td>
       </tr>
     <% end %>
   </tbody>

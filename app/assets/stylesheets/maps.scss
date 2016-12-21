@@ -11,6 +11,10 @@ td.mapcell .mapimage {
   width: 48px;
 }
 
+.map_lng_lat {
+  max-width: 145px;
+}
+
 // Limit the mapboxgl popup width. This to keep
 // wide content from spilling out of the mapbox.
 .mapboxgl-popup-content {
