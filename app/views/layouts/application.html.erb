@@ -5,7 +5,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Oneconcern Indika" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Oneconcern Indika" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+    <%= javascript_include_tag 'application', 'maps', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.css' rel='stylesheet' />

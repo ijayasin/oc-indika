@@ -16,7 +16,6 @@
 </div>
 
 <script>
-
   $(document).ready(function(){
     var accessToken = '<%= Settings.mapbox.access_token %>';
     var mapBounds   = <%= map.bounds.to_json %>;
@@ -26,9 +25,7 @@
         newMap:   <%= map.new_record?.to_json.html_safe %>
     };
     window.mapHandler = new window.MapHandler('map', accessToken, mapBounds , geojson, options);
-    console.log("READ!!");
   });
-
 </script>
 
 <%= render :partial => "map_modal" %>

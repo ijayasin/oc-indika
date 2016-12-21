@@ -50,8 +50,6 @@ class MapHandler
 
 
   hoverHandler: (event) =>
-    console.log "HOVER/MOUSEMOVE!"
-    console.dir event
     return unless event.point
     features = @map.queryRenderedFeatures(event.point, { layers: ['places'] });
     map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
@@ -62,8 +60,6 @@ class MapHandler
     @displayExistingFeature(features[0])
 
   clickHandler: (event) =>
-    console.log "CLICK!"
-    console.dir event
     return unless event.point
     features = @map.queryRenderedFeatures(event.point, { layers: ['places'] });
 
@@ -73,8 +69,6 @@ class MapHandler
       @displayNewMarkerModal(event.point)
 
   displayNewMarkerModal: (point) =>
-    console.log "displayNewMarkerModal"
-    console.dir point
     return unless point
 
     if @newMap
@@ -82,7 +76,6 @@ class MapHandler
       return
 
   displayExistingFeature: (feature) =>
-    console.log "displayExistingFeature"
     return unless feature.geometry?.coordinates
     # Populate the popup and set its coordinates
     # based on the feature found.
@@ -133,5 +126,3 @@ class MapHandler
 
 
 window.MapHandler = MapHandler
-
-console.log("ASSINGED MapHandler!")
