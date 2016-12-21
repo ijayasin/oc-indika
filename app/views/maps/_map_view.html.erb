@@ -16,15 +16,18 @@
 </div>
 
 <script>
-  var accessToken = '<%= Settings.mapbox.access_token %>';
-  var mapBounds   = <%= map.bounds.to_json %>;
-  var geojson     = <%= geojson_feature_collection(map.id, map.markers).to_json.html_safe %>;
-  var options     = {
-      editable: <%= editable.to_json.html_safe %>,
-      newMap:   <%= map.new_record?.to_json.html_safe %>
-  };
 
-  window.mapHandler = new window.MapHander('map', accessToken, mapBounds , geojson, options);
+  $(document).ready(function(){
+    var accessToken = '<%= Settings.mapbox.access_token %>';
+    var mapBounds   = <%= map.bounds.to_json %>;
+    var geojson     = <%= geojson_feature_collection(map.id, map.markers).to_json.html_safe %>;
+    var options     = {
+        editable: <%= editable.to_json.html_safe %>,
+        newMap:   <%= map.new_record?.to_json.html_safe %>
+    };
+    window.mapHandler = new window.MapHander('map', accessToken, mapBounds , geojson, options);
+  });
+
 </script>
 
 <%= render :partial => "map_modal" %>
