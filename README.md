@@ -57,11 +57,11 @@ or clone from Github
 git clone https://github.com/ijayasin/oc-indika.git
 ```
 
-Basic usage instruction can be found in `NOTES.md`.
+Basic usage instruction can be found in `README.md`.
 
 ```bash
 cd oc-indika
-less NOTES.md
+less README.md
 ```
 
 Install Ruby gems specified in the `Gemfile`.
