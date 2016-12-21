@@ -1,4 +1,4 @@
-# Mapbox Map Test - Indika
+# Mapbox Map - Indika
 
 ## Instructions
 
@@ -13,6 +13,7 @@
 ![Login form](doc/images/screenshot-login.png)
 
 
+
 ### Browsing Maps
 1. The homepage contains a list of maps that belong the user you are logged in as.
 2. The map thumbnails in the list give an approximate representation of the map.
@@ -21,8 +22,15 @@
    - You can pan and zoom the map and even zoom using a bounding box, but this will not change
      the map coordinates saved with the map.
      - Refreshing the page will reload the saved values.
+4. Hovering the mouse over markers on the map displays a tooltip with marker information.
 
 ![List of maps](doc/images/screenshot-maps.png)
+
+
+Hovering over a marker on the map displays a popup displaying the name and description of the
+the marker.
+![List of maps](doc/images/screenshot-maps-show-marker_popup.png)
+
 
 
 ### Creating a Map
@@ -44,8 +52,14 @@
 ![Specifying the bounding box](doc/images/screenshot-maps-new-bounding_box.png)
 
 
+
 ### Editing a Map
-1. Clicking the *Edit* but while viewing a map allows you to edit the maps.
+1. Clicking the *Edit* but while viewing a map allows the user to edit the maps.
+2. The user can change the bounding box by clicking and dragging the mouse while holding
+    the `Shift` key down.
+
+![Creating a new map](doc/images/screenshot-maps-edit-map_bounding_box.png)
+
 
 
 ### Preview on Heroku
@@ -53,6 +67,7 @@
 The project can be viewed on Heroku at the URL below:
 
 https://oc-indika.herokuapp.com/
+
 
 
 ### Run from Source Code
